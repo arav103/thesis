@@ -1,0 +1,40 @@
+{
+  "experiments": [
+    {
+      "name": "continued_charging_error",
+      "csv_path": "data/continued_charging_error.csv",
+      "target_col": "Error 1",
+      "drop_cols": ["Error 2", "Error 3", "Error 4", "Error 5", "bms_istmodus_error"],
+      "categorical_slices": [[0, 5], [36, 56]],
+      "n_estimators_grid": [1, 2, 4, 8, 16, 32, 48, 64, 82, 108],
+      "final_n_estimators": 22,
+      "final_max_depth": 35,
+      "distance_threshold": 1.1,
+      "pdp_feature": "laded_services_cdr_cpo"
+    },
+    {
+      "name": "stopped_charging_error",
+      "csv_path": "data/stopped_charging_error.csv",
+      "target_col": "Error 2",
+      "drop_cols": ["Error 1", "Error 3", "Error 4", "Error 5", "bms_istmodus_error"],
+      "categorical_slices": [[0, 5], [36, 56]],
+      "n_estimators_grid": [1, 2, 4, 8, 16, 32, 64, 128],
+      "final_n_estimators": 32,
+      "final_max_depth": 35,
+      "distance_threshold": 1.0,
+      "pdp_feature": "laded_services_cdr_cpo"
+    },
+    {
+      "name": "led_error",
+      "csv_path": "data/led_error.csv",
+      "target_col": "Error 4",
+      "drop_cols": ["Error 1", "Error 2", "Error 3", "Error 5", "bms_istmodus_error"],
+      "categorical_slices": [[0, 5], [36, 56]],
+      "n_estimators_grid": [1, 2, 4, 8, 16, 32, 64, 128],
+      "final_n_estimators": 32,
+      "final_max_depth": 35,
+      "distance_threshold": 0.8,
+      "pdp_feature": "laded_services_cdr_cpo"
+    }
+  ]
+}
